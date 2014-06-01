@@ -123,8 +123,8 @@
 				
 						window.desc({Description:{like: urlParams.search}}).each(function(d){
 							link = $("<a href=#>"+d.Description+"<br>"+"</a>")
-							link.click(function(){
-								console.log("name "+d.___id)
+							link.click(function(e){
+								e.preventDefault();
 								info(d.___id)
 							});
 							$("#place_list").append(link);
