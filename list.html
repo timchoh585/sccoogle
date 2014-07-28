@@ -38,12 +38,12 @@
 				float: left;
 				height: 500px;
 				overflow-y: scroll;
-				
+
 			}
 		 </style>
 
 		<script type="text/JavaScript">
-			
+
 		</script>
 	</head>
 	<body>
@@ -54,13 +54,13 @@
 			<input type="text" class="form-control" name="search" id="inputError1" placeholder="What's Your Issue?">
 		</div>
 		<div id="search_button">
-			<button type="submit" class="btn btn-primary" style="margin: 0px 10px 300px 10px; background-color: lightgrey; color: black; border: white">SCCoogle Search</button>         
+			<button type="submit" class="btn btn-primary" style="margin: 0px 10px 300px 10px; background-color: lightgrey; color: black; border: white">SCCoogle Search</button>
 		</div>
 		<div id="dont_know">
 			<a href="index.html#index"><button type="button" class="btn btn-primary" style="margin: 0px 10px 300px 10px; background-color: lightgrey; color: black; border: white">No Search Results?</button></a>
 		</div>
 	</form>
-	
+
 	<script src="taffydb-master/taffy-min.js"></script>
 	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 	<script src="jquery.csv-0.71.js"></script>
@@ -78,7 +78,7 @@
 			while (match = search.exec(query))
 			urlParams[decode(match[1])] = decode(match[2]);
 		})();
-		
+
 			function info(information)
 			{
 			   console.log(" info is " + information);
@@ -105,7 +105,7 @@
 			   $("#place_details").append("<p>" + result.Consequence_7 + "</p>");
 			}
 			function getParams(){
-				
+
 			}
 			$("document").ready(function(){
 			     $.ajax({
@@ -114,14 +114,14 @@
 					dataType: "text",
 					success: function(data) {
 						table = $.csv.toObjects(data)
-						
+
 						console.log(table);
 						window.desc = TAFFY(table);
-						
-						
-						
-				
-						window.desc({Description:{like: urlParams.search}}).each(function(d){
+
+
+
+
+						window.desc({Description:{likenocase: urlParams.search}}).each(function(d){
 							link = $("<a href=#>"+d.Description+"<br>"+"</a>")
 							link.click(function(){
 								console.log("name "+d.___id)
