@@ -1,6 +1,8 @@
 #Updating the data
 
-- Download the CSV file
+You will need to be a collaborator to this project on github. Sign up for a github acount (FREE) and contact Tim to ask him for access.
+
+- Download the CSV file (CPS_Code_of_Conduct.csv)
 - Open in Numbers/Excel/Google Spreadsheets/ANYTHING ELSE
 - Update entries
 - Save it as a csv
