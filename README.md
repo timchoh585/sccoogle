@@ -12,3 +12,5 @@ You will need to be a collaborator to this project on github. Sign up for a gith
 - Click edit.
 - Select all the text
 - Hit paste
+- At the bottom of the page enter in a commit comment and hit commit changes.
+- The website should be updated
