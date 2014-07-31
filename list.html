@@ -108,17 +108,20 @@
 			function getParams(){
 
 			}
-			
+
 			$("document").ready(function(){
 			     $.ajax({
 					type: "GET",
-					url: "http://timchoh585.github.io/CPS_Code_of_Conduct.csv",
+					url: "/CPS_Code_of_Conduct.txt",
 					dataType: "text",
 					success: function(data) {
 						table = $.csv.toObjects(data)
 
 						console.log(table);
 						window.desc = TAFFY(table);
+
+
+
 
 						window.desc({Description:{likenocase: urlParams.search}}).each(function(d){
 							link = $("<a href=#>"+d.Description+"<br>"+"</a>")
