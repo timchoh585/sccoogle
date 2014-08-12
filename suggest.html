@@ -24,6 +24,7 @@
 		  	  }
 		    }
 			xmlhttp.open("get","rules.php?q="+str,true);
+			xmlhttp.onload = reqListener;
 			xmlhttp.send();
 		}
 	</script>
