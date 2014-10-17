@@ -129,9 +129,6 @@
 						console.log(table);
 						window.desc = TAFFY(table);
 
-
-
-
 						window.desc({Description:{likenocase: urlParams.search}}).each(function(d){
 							link = $("<a href=#>"+d.Description+"<br>"+"</a>")
 							link.click(function(e){
