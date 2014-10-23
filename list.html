@@ -64,9 +64,11 @@
 			   $("#place_details").append("<p>" + "<h5>" + "7)" + "</h5>"  +
 			   	result.Intervention_Consequence_Option_7 + "</p>");
 			}
+
 			function getParams(){
 
 			}
+
 			$("document").ready(function(){
 			     $.ajax({
 					type: "GET",
@@ -84,7 +86,7 @@
 								e.preventDefault();
 								info(d.___id)
 							});
-							$("#place_list").append(link);
+							$("#place_list").append(link)+"hello";
 						});
 					}
 				});
