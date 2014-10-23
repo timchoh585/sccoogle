@@ -50,13 +50,20 @@
 			   $("#place_details").append("<h1>"+ result.Group_no + " - " + result.Group + " " + "</h1>");
 			   $("#place_details").append("<h2>" + result.Group_no + "." + result.Violation_no + " - " + result.Infraction_and_Description + "</h2>");
 			   $("#place_details").append("<h3>" + "Intrvention and Consequences" + "</h3>");
-			   $("#place_details").append("<p>" + result.Intervention_Consequence_Option_1 + "</p>");
-			   $("#place_details").append("<p>" + result.Intervention_Consequence_Option_2 + "</p>");
-			   $("#place_details").append("<p>" + result.Intervention_Consequence_Option_3 + "</p>");
-			   $("#place_details").append("<p>" + result.Intervention_Consequence_Option_4 + "</p>");
-			   $("#place_details").append("<p>" + result.Intervention_Consequence_Option_5 + "</p>");
-			   $("#place_details").append("<p>" + result.Intervention_Consequence_Option_6 + "</p>");
-			   $("#place_details").append("<p>" + result.Intervention_Consequence_Option_7 + "</p>");
+			   $("#place_details").append("<p>" + "<h3>" + "1" + "</h3>" +
+			    result.Intervention_Consequence_Option_1 + "</p>");
+			   $("#place_details").append("<p>" + "<h3>" + "2" + "</h3>"  +
+			    result.Intervention_Consequence_Option_2 + "</p>");
+			   $("#place_details").append("<p>" + "<h3>" + "3" + "</h3>"  +
+			   	result.Intervention_Consequence_Option_3 + "</p>");
+			   $("#place_details").append("<p>" + "<h3>" + "4" + "</h3>"  +
+			   	result.Intervention_Consequence_Option_4 + "</p>");
+			   $("#place_details").append("<p>" + "<h3>" + "5" + "</h3>"  +
+			   	result.Intervention_Consequence_Option_5 + "</p>");
+			   $("#place_details").append("<p>" + "<h3>" + "6" + "</h3>"  +
+			   	result.Intervention_Consequence_Option_6 + "</p>");
+			   $("#place_details").append("<p>" + "<h3>" + "7" + "</h3>"  +
+			   	result.Intervention_Consequence_Option_7 + "</p>");
 			}
 			function getParams(){
 
