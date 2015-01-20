@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+        <link rel="stylesheet" type="text/css" href="general_style.css" />
+
+		<script type="text/JavaScript">
+
+		</script>
+	</head>
+	<body>
+	<div id= "place_details"></div>
+	<div id="place_list"></div>
+	<form method="get" action='search.html'>
+		<div id="panel_body">
+			<input type="text" class="form-control" name="search" id="inputError1" placeholder="What's Your Issue?">
+		</div>
+		<div id="search_button">
+			<button type="submit" class="btn btn-primary" style="margin: 0px 10px 300px 10px; background-color: lightgrey; color: black; border: white">SCCoogle Search</button>
+		</div>
+		<div id="dont_know">
+			<a href="full_index.html"><button type="button" class="btn btn-primary" style="margin: 0px 10px 300px 10px; background-color: lightgrey; color: black; border: white">No Search Results?</button></a>
+		</div>
+		<div id="back_button">
+			<a href="main.html"><button type="button" class="btn btn-primary" style="margin: 0px 10px 300px 10px; background-color: lightgrey; color: black; border: white">Back To Home</button></a>
+		</div>
+	</form>
+
+	<script src="taffydb-master/taffy-min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.2.js"></script>
+	<script src="jquery.csv-0.71.js"></script>
+	<script type="text/JavaScript">
+		var urlParams;
+		(window.onpopstate = function ()
+		{
+			var match,
+			pl     = /\+/g,  // Regex for replacing addition symbol with a space
+			search = /([^&=]+)=?([^&]*)/g,
+			decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+			query  = window.location.search.substring(1);
+
+			urlParams = {};
+			while (match = search.exec(query))
+			urlParams[decode(match[1])] = decode(match[2]);
+		})();
+
+			function info(information)
+			{
+			   result = window.desc(information).first();
+			   $("#place_details").html("");
+			   $("#place_details").append("<h1>"+ result.Group_no + " - " + result.Group + " " + "</h1>");
+			   $("#place_details").append("<h2>" + result.Group_no + "." + result.Violation_no + " - " + result.Infraction_and_Description + "</h2>");
+			   $("#place_details").append("<h3>" + "Intervention and Consequences" + "</h3>");
+			   $("#place_details").append("<p>" + "1)" + result.Intervention_Consequence_Option_1 + "</p>");
+			   $("#place_details").append("<p>" + "<h5>" + "2)" + "</h5>"  +
+			    result.Intervention_Consequence_Option_2 + "</p>");
+			   $("#place_details").append("<p>" + "<h5>" + "3)" + "</h5>"  +
+			   	result.Intervention_Consequence_Option_3 + "</p>");
+			   $("#place_details").append("<p>" + "<h5>" + "4)" + "</h5>"  +
+			   	result.Intervention_Consequence_Option_4 + "</p>");
+			   $("#place_details").append("<p>" + "<h5>" + "5)" + "</h5>"  +
+			   	result.Intervention_Consequence_Option_5 + "</p>");
+			   $("#place_details").append("<p>" + "<h5>" + "6)" + "</h5>"  +
+			   	result.Intervention_Consequence_Option_6 + "</p>");
+			   $("#place_details").append("<p>" + "<h5>" + "7)" + "</h5>"  +
+			   	result.Intervention_Consequence_Option_7 + "</p>");
+			}
+
+			function getParams(){
+
+			}
+
+			$("document").ready(function(){
+			     $.ajax({
+					type: "GET",
+					url: "/CPS_Code_Of_Conduct.csv",
+					dataType: "text",
+					success: function(data) {
+						table = $.csv.toObjects(data)
+
+						console.log(table);
+						window.desc = TAFFY(table);
+
+						window.desc({Infraction_and_Description:{likenocase: urlParams.search}}).each(function(d){
+							link = $("<p><a href=#>"+d.Infraction_and_Description+"<br>"+"</a></p>")
+							link.click(function(e){
+								e.preventDefault();
+								info(d.___id)
+							});
+							$("#place_list").append(link);
+						});
+					}
+				});
+			});
+		</script>
+	</body>
+</html>
