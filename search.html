@@ -79,7 +79,7 @@
 						window.desc = TAFFY(table);
 
 						window.desc({Infraction_and_Description:{likenocase: urlParams.search}}).each(function(d){
-							link = $("<p><a href=#>"+d.Infraction_and_Description+"<br>"+"</a></p>")
+							link = $("<p>- <a href=#>"+d.Infraction_and_Description+"<br>"+"</a></p>")
 							link.click(function(e){
 								e.preventDefault();
 								info(d.___id)
@@ -92,19 +92,3 @@
 		</script>
 	</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
