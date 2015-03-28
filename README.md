@@ -1,4 +1,4 @@
-# sccoogle3.0
+# sccoogle 3.0
 
 this is the new version of SCCoogle.  This uses the MEAN stack (MongoDB (didnt really use this), ExpressJS, AngularJS, NodeJS). Much more developed and hopefully better.  Will be making some changes to the layout because its all kinda stuffed together right now.
 
