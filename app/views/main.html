@@ -1,0 +1,42 @@
+<div class="jumbotron">
+  <p class="lead">
+    <img src="../images/SCCoogle.png" alt="Chicago's Student Code Of Conduct" width="100%"><br>
+  </p>
+    
+    <div class="row">
+        <form class="form-search"> <!--action='../search.html'-->
+            <div class="panel-body" width="90%">
+                <input type="text" ng-model="search.FIELD4" class="form-control" name="search" id="input" placeholder="What's your issue?" autofocus>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <button type="submit" class="btn btn-primary" style="background-color: lightgrey; color: black; border: white">SCCoogle Search</button>
+                </div>
+                <div class="col-sm-6">
+                    <a href="#/"><button type="button" class="btn btn-primary" style="background-color: lightgrey; color: black; border: white">No Search Results?</button></a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="container-fluid" ng-controller="MainCtrl">
+    <table border="1" style="table-layout:fixed" class="table table-boarded table-striped" fixed-header> <!--ng-show="(search.FIELD4.length>=3)"-->
+        <thead>
+            <tr align="center">
+                <th>Group Number</th>
+                <th>Group</th>
+                <th>Violation Number</th>
+                <th>Infraction and Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="animate" style="table-layout:fixed" ng-animate="'animate'" align="center" ng-repeat="x in rules | filter:search">
+                    <td><strong>{{x.FIELD1}}</strong></td>
+                    <td>{{x.FIELD2}}</td>
+                    <td><strong>{{x.FIELD3}}</strong></td>
+                <td><a href="#/details/{{rules.indexOf(x)}}">{{x.FIELD4}}</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

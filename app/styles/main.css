@@ -1,0 +1,119 @@
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.footer {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+#resources_files {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.table {
+    align-content: center;
+    table-layout: fixed;
+    height: 500px;
+}
+
+.th, td {
+    border: 1px solid black;
+    overflow: hidden;
+}
+
+.animate-enter, 
+.animate-leave { 
+    -webkit-transition: 250ms cubic-bezier(0.420, 0.000, 0.580, 1.000) all;
+    -moz-transition: 250ms cubic-bezier(0.420, 0.000, 0.580, 1.000) all;
+    -ms-transition: 250ms cubic-bezier(0.420, 0.000, 0.580, 1.000) all;
+    -o-transition: 250ms cubic-bezier(0.420, 0.000, 0.580, 1.000) all;
+    transition: 250ms cubic-bezier(0.420, 0.000, 0.580, 1.000) all;
+    position: relative;
+    display: block;
+} 
+
+.animate-leave.animate-leave-active,
+.animate-enter {
+    -webkit-transform: rotateX(90deg) rotateY(45deg) rotateZ(90deg);
+    -moz-transform: rotateX(90deg) rotateY(45deg) rotateZ(90deg);
+    -ms-transform: rotateX(90deg) rotateY(45deg) rotateZ(90deg);
+    -o-transform: rotateX(90deg) rotateY(45deg) rotateZ(90deg);
+    transform: rotateX(90deg) rotateY(45deg) rotateZ(90deg);
+    opacity: 0;
+    height: 0px;
+}        
+
+.animate-enter.animate-enter-active,
+.animate-leave {
+    -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    -moz-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    -ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    -o-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    opacity: 1;
+    height: 30px;
+}
